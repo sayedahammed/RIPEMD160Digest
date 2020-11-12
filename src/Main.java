@@ -5,12 +5,13 @@ public class Main {
        String digest;
        CryptoService cryptoService = new CryptoService();
 
-       digest = cryptoService.generateRipemd160Digest("Hello");
+       String otp = String.valueOf(1100);
+       digest = cryptoService.generateRipemd160Digest(otp);
 
        System.out.println(digest);
 
-       System.out.println(cryptoService.verifyRipemd160Digest("Hello", digest));
-       System.out.println(cryptoService.verifyRipemd160Digest("Okay", digest));
+       System.out.println(cryptoService.verifyRipemd160Digest(otp, digest));
+       System.out.println(cryptoService.verifyRipemd160Digest(otp, digest));
 
     }
 }
